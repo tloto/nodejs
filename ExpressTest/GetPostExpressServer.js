@@ -25,8 +25,24 @@ app.post('/process_post',urlencodedParser,function(req,res){
   res.send('hello post'+JSON.stringify(response));
 })
 
-
-
+app.get('/test',function(req,res){
+  res.sendFile(__dirname +'/'+'test.html');
+})
+app.post('/arrtest',urlencodedParser,function(req,res){
+  console.log("crypto");
+  console.log(req.body['object']);
+  console.log(req.body.object[0]);
+  // console.log(req.body.object[0]['key']);
+  var arr={key:'hello'};
+  res.send(arr);
+})
+app.get('/arrtest',function(req,res){
+  console.log("crypto");
+  res.send('hello post');
+})
+app.get('/test',function(req,res){
+  res.sendFile(__dirname +'/'+'test.html');
+})
 var server = app.listen(8081,function(){
   var host = server.address().address
   var port = server.address().address

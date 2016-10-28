@@ -11,6 +11,7 @@ Base.prototype.showName = function(){
 }
 function Sub(){
   this.name='sub';
+  this.hello='hello';
 }
 util.inherits(Sub,Base);
 
